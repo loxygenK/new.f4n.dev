@@ -1,0 +1,40 @@
+name: Linting
+
+on:
+  pull_request:
+
+  push:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        cmd: [ "lint:eslint", "lint:prettier" ]
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
+      - name: Find the path of pnpm store
+        id: context
+        run: |
+          echo "::set-output name=path::$(pnpm store path)"
+          echo "::set-output name=branch::${GITHUB_REF#refs/heads/}"
+      - uses: actions/cache@v1
+        with:
+          path: ${{ steps.context.outputs.path }}
+          key: ${{ runner.os }}-pnpm_store-local_${{ steps.context.outputs.branch }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm_store-local_${{ steps.context.outputs.branch }}-
+            ${{ runner.os }}-pnpm_store-local_main-
+      - run: pnpm i
+
+      - run: pnpm ${{ matrix.cmd }}
