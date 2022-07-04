@@ -1,12 +1,10 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "plugin:tailwindcss/recommended",
     "prettier"
   ],
   "plugins": [
-    "eslint-plugin-simple-import-sort",
-    "tailwindcss"
+    "eslint-plugin-simple-import-sort"
   ],
   "rules": {
     "simple-import-sort/imports": "error",
