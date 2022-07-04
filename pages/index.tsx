@@ -2,6 +2,8 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 
+import styles from "~/pages/index.module.scss";
+
 const Home: NextPage = () => {
   return (
     <div>
@@ -11,7 +13,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="p-6">
+      <main className={styles.main}>
         <div className="text-green-800">✨ It&apos;s working!</div>
       </main>
     </div>

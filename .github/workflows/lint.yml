@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        cmd: [ "lint:eslint", "lint:prettier" ]
+        cmd: [ "lint:eslint", "lint:stylelint", "lint:prettier" ]
       fail-fast: false
 
     steps:
