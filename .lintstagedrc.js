@@ -3,8 +3,16 @@ function runFix(/** @type string[] */ files) {
   return `pnpm fix ${fileFlags.join(" ")}`;
 }
 
+function runStylelintFix(/** @type string[] */ files) {
+  return `pnpm stylelint --fix ${files.join(" ")}`;
+}
+
 module.exports = {
-  "./**/*.{ts?(x),scss}": [
+  "./**/*.{ts?(x),?(s)css}": [
     runFix, "pnpm fix:prettier"
-  ]
+  ],
+  "./**/*.?(s)css": [
+    runStylelintFix
+  ],
+
 }
