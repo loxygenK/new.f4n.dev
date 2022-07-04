@@ -4,7 +4,7 @@ function runFix(/** @type string[] */ files) {
 }
 
 module.exports = {
-  "./**/*.ts?(x)": [
+  "./**/*.{ts?(x),scss}": [
     runFix, "pnpm fix:prettier"
   ]
 }
