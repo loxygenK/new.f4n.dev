@@ -10,11 +10,11 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <div className="text-green-800">✨ It&apos;s working!</div>
         <span className={styles.button_list}>
-          <IconButton icon={<ChevronRight />}>Hello!</IconButton>
-          <IconButton icon={<ChevronRight />}>Hello!</IconButton>
-          <IconButton icon={<ChevronRight />}>Hello!</IconButton>
-          <IconButton icon={<ChevronRight />}>Hello!</IconButton>
-          <IconButton icon={<ChevronRight />}>Hello!</IconButton>
+          <IconButton icon={ChevronRight}>Hello!</IconButton>
+          <IconButton icon={ChevronRight}>Hello!</IconButton>
+          <IconButton icon={ChevronRight}>Hello!</IconButton>
+          <IconButton icon={ChevronRight}>Hello!</IconButton>
+          <IconButton icon={ChevronRight}>Hello!</IconButton>
         </span>
       </main>
     </div>
