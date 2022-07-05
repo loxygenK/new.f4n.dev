@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./index.module.scss";
 
-export type ClassNameAcceptable = React.ComponentType<{ className: string }>;
+export type ClassNameAcceptable = React.ComponentType<{ className?: string }>;
 
 type Props = {
   provider: ClassNameAcceptable;

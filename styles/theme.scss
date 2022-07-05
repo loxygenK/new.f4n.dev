@@ -1,0 +1,9 @@
+@use "~/styles/util";
+
+$theme-color: (
+  primary: #E84A4A
+);
+
+@function color($name) {
+  @return util.map-safe-get($theme-color, $name);
+}

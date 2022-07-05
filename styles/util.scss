@@ -1,0 +1,7 @@
+@function map-safe-get($map, $key) {
+  @if not map-has-key($map, $key) {
+    @error "Key '#{$key}' is not found in the map.";
+  }
+
+  @return map-get($map, $key);
+}

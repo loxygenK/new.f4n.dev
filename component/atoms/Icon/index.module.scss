@@ -1,3 +1,5 @@
+@use "~/styles/theme";
+
 .icon {
-  color: red;
+  color: theme.color("primary");
 }
