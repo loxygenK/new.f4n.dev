@@ -1,0 +1,30 @@
+.hidden_content {
+  transition: all 0.3s;
+  opacity: 0%;
+
+  margin-left: -3em;
+
+  pointer-events: none;
+}
+
+.button {
+  display: flex;
+  gap: 0.15em;
+  align-items: center;
+
+  border: 1px solid black;
+
+  min-width: 1.25em;
+}
+
+.icon svg {
+  width: 1.25em;
+  height: 1.25em;
+}
+
+.button:hover .hidden_content {
+  opacity: 100%;
+  width: initial;
+
+  margin-left: 0%;
+}
