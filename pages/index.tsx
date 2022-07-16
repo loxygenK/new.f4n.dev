@@ -2,6 +2,8 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 
+import { Avatar } from "~/components/atoms/avatar";
+import { TwoColumeTemplate } from "~/components/templates/two-colume";
 import styles from "~/pages/index.module.scss";
 
 const Home: NextPage = () => {
@@ -14,7 +16,10 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <div className="text-green-800">✨ It&apos;s working!</div>
+        <TwoColumeTemplate
+          left={<div>Wow</div>}
+          right={<div>Unbelievable</div>}
+        />
       </main>
     </div>
   );
