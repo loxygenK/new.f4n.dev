@@ -1,0 +1,7 @@
+@function map-get-with-error($map, $key) {
+  @if not map-has-key($map, $key) {
+    @error "The map does not have a key #{$key}. Following is available; #{map-keys($map)}";
+  }
+
+  @return map-get($map, $key);
+}

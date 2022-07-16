@@ -1,0 +1,11 @@
+@use "./util.module.scss";
+
+$theme-colors: (
+  text: #111,
+  primary: #e84a4a,
+  secondary: #f046d5,
+);
+
+@function color($key) {
+  @return util.map-get-with-error($theme-colors, $key);
+}

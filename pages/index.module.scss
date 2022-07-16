@@ -1,5 +1,8 @@
+@use "~/styles/theme.module.scss";
+
 $pad: 1.5em;
 
 .main {
   padding: $pad;
+  color: theme.color(text);
 }
