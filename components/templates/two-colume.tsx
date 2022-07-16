@@ -1,5 +1,7 @@
 import React from "react";
+
 import { classNames } from "~/helper/className";
+
 import styles from "./two-colume.module.scss";
 
 type Props = {
