@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import { Avatar } from "~/components/atoms/avatar";
 
 import styles from "~/pages/index.module.scss";
 
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <div className="text-green-800">✨ It&apos;s working!</div>
+        <Avatar className={styles.avatar} />
       </main>
     </div>
   );
