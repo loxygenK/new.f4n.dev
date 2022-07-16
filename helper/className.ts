@@ -1,4 +1,4 @@
-export type ClassName = string;
+export type ClassName = string | false;
 export function classNames(...classNameList: Array<ClassName>) {
-  return classNameList.join(" ");
+  return classNameList.filter((c) => c !== false).join(" ");
 }

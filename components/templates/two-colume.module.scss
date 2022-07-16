@@ -1,0 +1,15 @@
+.two_row_template {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+}
+
+.content {
+  width: calc(50% - 1em / 2);
+  overflow: hidden;
+  transition: width 1s;
+}
+
+.right_empty {
+  width: 0;
+}
