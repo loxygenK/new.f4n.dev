@@ -15,7 +15,7 @@
     "fix": "pnpm fix:eslint && pnpm fix:prettier",
     "fix:eslint": "pnpm lint:eslint --fix",
     "fix:stylelint": "pnpm lint:stylelint --fix",
-    "fix:prettier": "pnpm fix:eslint -w"
+    "fix:prettier": "pnpm lint:prettier -w"
   },
   "dependencies": {
     "@solidjs/router": "^0.6.0",
