@@ -8,14 +8,15 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "pnpm lint:eslint && pnpm lint:prettier",
+    "lint": "pnpm lint:eslint && pnpm lint:stylelint && pnpm lint:prettier",
     "lint:eslint": "eslint './src/**/*.tsx'",
-    "lint:stylelint": "stylelint './src/**/*.tsx'",
+    "lint:stylelint": "stylelint './src/**/*.{css,scss}'",
     "lint:prettier": "prettier -c './src/**/*.tsx'",
-    "fix": "pnpm fix:eslint && pnpm fix:prettier",
+    "fix": "pnpm fix:eslint && pnpm fix:stylelint && pnpm fix:prettier",
     "fix:eslint": "pnpm lint:eslint --fix",
     "fix:stylelint": "pnpm lint:stylelint --fix",
-    "fix:prettier": "pnpm lint:prettier -w"
+    "fix:prettier": "pnpm lint:prettier -w",
+    "postinstall": "husky install"
   },
   "dependencies": {
     "@solidjs/router": "^0.6.0",
