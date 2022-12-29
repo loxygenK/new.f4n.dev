@@ -1,5 +1,5 @@
 import { JSX } from "solid-js";
-import { injectChildren } from "../../../../helper/children";
+import { injectChildren } from "~/helper/children";
 import styles from "./Page.module.scss";
 
 export type PageProps = {
