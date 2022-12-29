@@ -1,9 +1,9 @@
-import { createSignal } from 'solid-js'
-import solidLogo from './assets/solid.svg'
-import './App.css'
+import { createSignal } from "solid-js";
+import solidLogo from "../assets/solid.svg";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = createSignal(0)
+  const [count, setCount] = createSignal(0);
 
   return (
     <div class="App">
@@ -28,7 +28,7 @@ function App() {
         Click on the Vite and Solid logos to learn more
       </p>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,28 @@
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone and checkout to this repository
+        uses: actions/checkout@v3
+
+      - name: Prepare pnpm
+        uses: pnpm/action-setup@v2
+
+      - name: Node.js preparation
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run lints
+        run: pnpm lint
