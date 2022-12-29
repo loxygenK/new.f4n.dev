@@ -31,6 +31,8 @@
     "lint-staged": "^13.1.0",
     "postcss": "^8.4.20",
     "prettier": "^2.8.1",
+    "sass": "^1.57.1",
+    "scaffdog": "^2.4.0",
     "stylelint": "^14.16.1",
     "stylelint-config-prettier-scss": "^0.0.1",
     "stylelint-config-standard-scss": "^6.1.0",
