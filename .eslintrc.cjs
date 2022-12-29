@@ -21,6 +21,6 @@ module.exports = {
     "solid/event-handlers": "error",
     "solid/reactivity": "error",
     "solid/no-react-deps": "error",
-    "solid/prefer-show": "warning",
+    "solid/prefer-show": "warn",
   }
 }
