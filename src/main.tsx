@@ -1,17 +1,14 @@
 /* @refresh reload */
-import './index.css'
-import { render } from 'solid-js/web'
+import "./index.css";
+import { render } from "solid-js/web";
 import { Router, useRoutes } from "@solidjs/router";
-import routes from '~solid-pages';
+import routes from "~solid-pages";
 
-render(
-  () => {
-    const Routes = useRoutes(routes);
-    return (
-      <Router>
-        <Routes />
-      </Router>
-    );
-  },
-  document.getElementById('root') as HTMLElement
-);
+render(() => {
+  const Routes = useRoutes(routes);
+  return (
+    <Router>
+      <Routes />
+    </Router>
+  );
+}, document.getElementById("root") as HTMLElement);
