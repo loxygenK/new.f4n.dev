@@ -3,10 +3,11 @@
  */
 module.exports = {
   "extends": [
-    "stylelint-config-prettier-scss",
     "stylelint-config-standard-scss",
+    "stylelint-config-prettier-scss",
   ],
   "rules": {
-    "color-hex-length": "long"
+    "color-hex-length": "long",
+    "rule-empty-line-before": null
   }
 };
