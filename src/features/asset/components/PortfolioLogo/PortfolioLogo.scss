@@ -1,0 +1,210 @@
+/* stylelint-disable selector-id-pattern */
+@use "sass:math";
+
+@function offset($coord, $size, $mode: "middle") {
+  @if $mode == "top" {
+    @return $coord;
+  }
+
+  @if $mode == "middle" {
+    @return $coord + math.div($size, 2);
+  }
+
+  @if $mode == "bottom" {
+    @return $coord + $size;
+  }
+
+  @error "#{$middle} is not 'top', 'middle', 'bottom'";
+}
+
+@mixin animate-svg-border($length, $duration, $delay: 0s) {
+  $tag: math.random(100000000);
+
+  stroke-dasharray: $length;
+
+  @keyframes svg_border_anim_#{$tag} {
+    from {
+      stroke-dashoffset: $length;
+    }
+
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  animation: $duration svg_border_anim_#{$tag} $delay both ease-out;
+}
+
+@mixin origin(
+  $x,
+  $y,
+  $w,
+  $h,
+  $dx: 0,
+  $dy: 0,
+  $xMode: "middle",
+  $yMode: "middle"
+) {
+  // prettier-ignore
+  transform-origin:
+    (math.div(offset($x, $w, $xMode) + $dx, 693px) * 100%)
+    (math.div(offset($y, $h, $yMode) + $dy, 189px) * 100%);
+}
+
+$step: 0.2s;
+$bezier-gentle-stop: cubic-bezier(0.53, 0.99, 0.52, 0.99);
+$bezier-bouncy: cubic-bezier(0.13, 1.15, 0.29, 1.13);
+$bezier-fierce-ease: cubic-bezier(0.15, 0.98, 0.57, 1);
+
+.portfolio-logo {
+  #letter_F_outline {
+    @include animate-svg-border(775px, 1s, 0s);
+  }
+
+  #letter_L_outline {
+    @include animate-svg-border(480px, 1s, $step * 1);
+  }
+
+  #letter_I_outline {
+    @include animate-svg-border(350px, 1s, $step * 2);
+  }
+
+  #letter_S_outline {
+    @include animate-svg-border(765px, 1s, $step * 3);
+  }
+
+  #letter_A_outline {
+    @include animate-svg-border(660px, 1s, $step * 4);
+  }
+
+  #letter_N_outline {
+    @include animate-svg-border(760px, 1s, $step * 5);
+  }
+
+  #fill-mask > path {
+    animation: 1s fill-mask $step * 8 both $bezier-fierce-ease;
+    transform-origin: center;
+  }
+
+  #FallingStar {
+    #Star1 {
+      @include origin(358.37px, 139.623px, 21.724px, 20.963px, -1.5px, -3px);
+
+      animation: 13s rotate infinite linear;
+    }
+
+    #Star2 {
+      @include origin(339.547px, 154.329px, 21.174px, 21.679px, -2px, -5px);
+
+      animation: 13s rotate infinite reverse linear;
+    }
+
+    #Star3 {
+      @include origin(358.392px, 161.65px, 21.051px, 21.71px, -1px, -5px);
+
+      animation: 13s rotate infinite linear;
+    }
+
+    animation: 1s falling-star $step * 10 both $bezier-fierce-ease;
+  }
+
+  #Snowflake {
+    animation: 2s snowflake $step * 11 both;
+  }
+
+  #Snow {
+    animation: 1.5s snow $step * 12 both $bezier-gentle-stop;
+  }
+
+  #CatEarL,
+  #CatEarR {
+    animation: 0.75s catear-both $step * 13 both $bezier-bouncy;
+  }
+
+  #CatEarL {
+    @include origin(
+      431.291px,
+      9.662px,
+      56.662px,
+      66.734px,
+      -1px,
+      -1px,
+      $yMode: "bottom"
+    );
+  }
+
+  #CatEarR {
+    @include origin(
+      481.454px,
+      9.308px,
+      56.164px,
+      67.357px,
+      -1px,
+      -1px,
+      $yMode: "bottom"
+    );
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes fill-mask {
+  from {
+    transform: scale(250%) rotate(25deg) translateX(-500px);
+  }
+
+  to {
+    transform: scale(250%) rotate(25deg) translateX(-200px);
+  }
+}
+
+@keyframes falling-star {
+  from {
+    transform: translateX(400px) translateY(-100px);
+  }
+
+  to {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes snowflake {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes snow {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes catear-both {
+  from {
+    transform: scaleY(0%);
+  }
+
+  to {
+    transform: scaleY(100%);
+  }
+}
