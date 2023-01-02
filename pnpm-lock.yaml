@@ -10,6 +10,7 @@ specifiers:
   lint-staged: ^13.1.0
   postcss: ^8.4.20
   prettier: ^2.8.1
+  ress: ^5.0.2
   sass: ^1.57.1
   scaffdog: ^2.4.0
   solid-js: ^1.6.4
@@ -24,6 +25,7 @@ specifiers:
 
 dependencies:
   '@solidjs/router': 0.6.0_solid-js@1.6.6
+  ress: 5.0.2
   solid-js: 1.6.6
 
 devDependencies:
@@ -3634,6 +3636,10 @@ packages:
     dependencies:
       lowercase-keys: 1.0.1
     dev: true
+
+  /ress/5.0.2:
+    resolution: {integrity: sha512-oHBtOWo/Uc8SzQMbQNIKTcgi8wKmAs7IlNlRywmXudbOtF+c27FlOIq7tnwLDVcTywe6JXYo1pDXHO6kABwNYA==}
+    dev: false
 
   /restore-cursor/3.1.0:
     resolution: {integrity: sha512-l+sSefzHpj5qimhFSE5a8nufZYAM3sBSVMAPtYkmC+4EH2anSGaEMXSD0izRQbu9nfyQ9y5JrVmp7E8oZrUjvA==}
