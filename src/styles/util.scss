@@ -1,0 +1,7 @@
+@function map-get-checked($map, $key) {
+  @if not map-has-key($map, $key) {
+    @error "This map has no value with key #{$key}, available keys are #{map-keys($map)}";
+  }
+
+  @return map-get($map, $key);
+}
