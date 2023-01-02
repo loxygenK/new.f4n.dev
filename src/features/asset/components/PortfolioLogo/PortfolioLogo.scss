@@ -81,7 +81,7 @@ $bezier-fierce-ease: cubic-bezier(0.15, 0.98, 0.57, 1);
     @include animate-svg-border(760px, 1s, $step * 5);
   }
 
-  #fill-mask > path {
+  #fill_mask > path {
     animation: 1s fill-mask $step * 8 both $bezier-fierce-ease;
     transform-origin: center;
   }

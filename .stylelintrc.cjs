@@ -8,6 +8,7 @@ module.exports = {
   ],
   "rules": {
     "color-hex-length": "long",
-    "rule-empty-line-before": null
+    "rule-empty-line-before": null,
+    "declaration-empty-line-before": null
   }
 };

@@ -1,0 +1,15 @@
+@use "./util.scss";
+
+$theme-map: (
+  primary: #035b61,
+  secondary: #c756bb,
+  control: #82407b,
+);
+
+@function theme($color) {
+  @return util.map-get-checked($theme-map, $color);
+}
+
+@function theme-gradient() {
+  @return linear-gradient(90deg, theme(primary), theme(secondary));
+}
