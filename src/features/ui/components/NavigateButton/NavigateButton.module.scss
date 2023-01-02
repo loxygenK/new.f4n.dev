@@ -1,0 +1,10 @@
+@use "~/styles/color.scss";
+
+.navigate-button {
+  background-color: color.theme(control);
+  color: white;
+  font-weight: bold;
+  padding: 0.8em 0 0.6em;
+  width: 100%;
+  line-height: 100%;
+}
