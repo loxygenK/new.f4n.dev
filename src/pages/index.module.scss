@@ -1,0 +1,45 @@
+@use "~/styles/color.scss";
+
+.title-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25em;
+}
+
+.logo {
+  width: clamp(10em, 45vw, 50em);
+  height: fit-content;
+}
+
+.short-introduction {
+  color: transparent;
+  background: color.theme-gradient();
+  background-clip: text;
+
+  // -webkit-background-clip: text;
+
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.button-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5vw;
+  width: 100%;
+}
+
+.button-list-primary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  width: 100%;
+  gap: 1.5vw;
+}
+
+.blog-button {
+  width: 33%;
+}
